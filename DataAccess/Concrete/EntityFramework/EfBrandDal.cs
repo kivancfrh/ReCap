@@ -1,33 +1,34 @@
 ﻿using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
-namespace DataAccess.Concrete
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class InMemory : ICarDal
+    public class EfBrandDal : IBrandDal
     {
-        public void Add()
+        public void Add(Brand entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete()
+        public void Delete(Brand entity)
         {
             throw new NotImplementedException();
         }
 
-        public void GetAll()
+        public Brand Get(Expression<Func<Brand, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public void GetByld()
+        public List<Brand> GetAll(Expression<Func<Brand, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Update()
+        public void Update(Brand entity)
         {
             throw new NotImplementedException();
         }
