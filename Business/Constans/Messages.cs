@@ -12,5 +12,7 @@ namespace Business.Constans
         public static string CarListed = "Araçlar listelendi";
         public static string Listed = "Liste oluşturuldu";
         public static string NotListed = "Liste Oluşturulamadı";
+        public static string SuccessLogin = "Giriş başarılı";
+        public static string LoginInvalid = "Login Başarısız";
     }
 }

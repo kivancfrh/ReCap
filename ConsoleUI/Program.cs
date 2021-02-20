@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Utilities.Results.Abstract;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
@@ -10,20 +11,41 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            
-            User user = Login();
+
+            //User user = Login();
+
+            //UserManager userManager = new UserManager(new EfUserDal());
+            //var result = userManager.CheckUser(user);
+
+            //if (result.Success)
+            //{
+            //    Console.WriteLine(result.Message);
+            //    UserOperations();
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
 
 
-
-            Console.WriteLine("---------------İşlemler---------------");
 
 
 
             //AddCar();
-            //GetCarByBrandId();
+            GetCarByBrandId();
 
 
             //JoinTest();
+
+        }
+
+        private static void UserOperations()
+        {
+            Console.WriteLine("---------------İşlemler---------------");
+            Console.WriteLine("1) Add Car");
+            Console.WriteLine("2) Add Customer");
+            Console.WriteLine("3) Rent a Car \n");
+            Console.Write("Bir işlem seçin = ");
 
         }
 
@@ -34,7 +56,7 @@ namespace ConsoleUI
             Console.Write("Mail Adresi = ");
             user.Email = Console.ReadLine();
             Console.Write("Şifre = ");
-            user.LastName = Console.ReadLine();
+            user.Password = Console.ReadLine();
             return user;
 
         }
@@ -63,7 +85,7 @@ namespace ConsoleUI
             {
                 foreach (var car in result.Data)
                 {
-                    Console.WriteLine(car.ColorId);
+                    Console.WriteLine(car.BrandId);
                 }
                 Console.WriteLine(result.Message);
             }

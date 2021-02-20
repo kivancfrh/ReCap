@@ -15,6 +15,11 @@ namespace DataAccess.Concrete
             throw new NotImplementedException();
         }
 
+        public Car Contain(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Car entity)
         {
             throw new NotImplementedException();
@@ -31,6 +36,11 @@ namespace DataAccess.Concrete
         }
 
         public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetails(User user)
         {
             throw new NotImplementedException();
         }

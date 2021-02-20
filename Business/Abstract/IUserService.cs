@@ -8,6 +8,6 @@ namespace Business.Abstract
 {
     public interface IUserService
     {
-        IDataResult<User> Get(User user);
+        IResult CheckUser(User user);
     }
 }
