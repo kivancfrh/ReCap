@@ -21,6 +21,11 @@ namespace Core.DataAccess.EntityFramework
             }
         }
 
+        public TEntity Contain(Expression<Func<TEntity, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(TEntity entity)
         {
             throw new NotImplementedException();

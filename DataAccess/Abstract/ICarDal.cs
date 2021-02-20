@@ -9,6 +9,7 @@ namespace DataAccess.Abstract
 {
     public interface ICarDal:IEntityRepository<Car>
     {
-        List<CarDetailDto> GetCarDetails();
+        // IEntityRepository'deki ortak operasyonlar haricinde özel operasyonlar buraya eklenir.
+        List<CarDetailDto> GetCarDetails(User user);
     }
 }

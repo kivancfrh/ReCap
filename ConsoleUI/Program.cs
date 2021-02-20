@@ -2,6 +2,7 @@
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleUI
 {
@@ -9,11 +10,32 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            AddCar();
+            
+            User user = Login();
+
+
+
+            Console.WriteLine("---------------İşlemler---------------");
+
+
+
+            //AddCar();
             //GetCarByBrandId();
 
 
             //JoinTest();
+
+        }
+
+        private static User Login()
+        {
+            User user = new User();
+            Console.WriteLine("---------------LOGIN---------------");
+            Console.Write("Mail Adresi = ");
+            user.Email = Console.ReadLine();
+            Console.Write("Şifre = ");
+            user.LastName = Console.ReadLine();
+            return user;
 
         }
 
@@ -41,7 +63,7 @@ namespace ConsoleUI
             {
                 foreach (var car in result.Data)
                 {
-                    Console.WriteLine(car.CompanyId);
+                    Console.WriteLine(car.ColorId);
                 }
                 Console.WriteLine(result.Message);
             }
@@ -50,7 +72,7 @@ namespace ConsoleUI
         private static void AddCar()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            Car car = new Car { CompanyId = 1, BrandId = 2, ColorId = 3, CountryId = 2, DailyPrice = 750, Year = "2021", Description = "Kıvanç 2" };
+            Car car = new Car { BrandId = 2, ColorId = 3, DailyPrice = 750, ModelYear = "2021", Description = "Kıvanç 2" };
             
             var result = carManager.AddCar(car);
 
