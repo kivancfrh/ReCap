@@ -11,32 +11,29 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
+            User user = new User { Email = "kivanc.frh@gmail.com", Password = "123" };
+            Car car = new Car { BrandId = 2, ModelId = 2, ColorId = 3, DailyPrice = 750, ModelYear = "2021", Description = "Kıvanç 2" };
 
-            //User user = Login();
+            Login(user);
+            AddCar(car);
+            GetCarByBrandId(3);
+            JoinTest();
+        }
 
-            //UserManager userManager = new UserManager(new EfUserDal());
-            //var result = userManager.CheckUser(user);
+        private static void Login(User user)
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            var result = userManager.CheckUser(user);
 
-            //if (result.Success)
-            //{
-            //    Console.WriteLine(result.Message);
-            //    UserOperations();
-            //}
-            //else
-            //{
-            //    Console.WriteLine(result.Message);
-            //}
-
-
-
-
-
-            //AddCar();
-            GetCarByBrandId();
-
-
-            //JoinTest();
-
+            if (result.Success)
+            {
+                Console.WriteLine(result.Message);
+                UserOperations();
+            }
+            else
+            {
+                Console.WriteLine(result.Message);
+            }
         }
 
         private static void UserOperations()
@@ -46,19 +43,6 @@ namespace ConsoleUI
             Console.WriteLine("2) Add Customer");
             Console.WriteLine("3) Rent a Car \n");
             Console.Write("Bir işlem seçin = ");
-
-        }
-
-        private static User Login()
-        {
-            User user = new User();
-            Console.WriteLine("---------------LOGIN---------------");
-            Console.Write("Mail Adresi = ");
-            user.Email = Console.ReadLine();
-            Console.Write("Şifre = ");
-            user.Password = Console.ReadLine();
-            return user;
-
         }
 
         private static void JoinTest()
@@ -76,10 +60,10 @@ namespace ConsoleUI
             }
         }
 
-        private static void GetCarByBrandId()
+        private static void GetCarByBrandId(int id)
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            var result = carManager.GetCarsByBrandId(3);
+            var result = carManager.GetCarsByBrandId(id);
 
             if (result.Success)
             {
@@ -91,10 +75,9 @@ namespace ConsoleUI
             }
         }
 
-        private static void AddCar()
+        private static void AddCar(Car car)
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            Car car = new Car { BrandId = 2, ColorId = 3, DailyPrice = 750, ModelYear = "2021", Description = "Kıvanç 2" };
             
             var result = carManager.AddCar(car);
 

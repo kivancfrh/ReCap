@@ -13,6 +13,7 @@ namespace DataAccess.Concrete.EntityFramework
             try
             {
                 optionsBuilder.UseSqlServer(@"Server=DESKTOP-TEV2VHC\SQLEXPRESS;Database=ReCap;Trusted_Connection=true");
+                //optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=ReCap;Trusted_Connection=true");
             }
             catch (Exception)
             {
@@ -27,6 +28,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Color> Colors { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Rental> Rentals { get; set; }
-        public DbSet<Customer> Customers { get; set; }    
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Model> Models { get; set; }
     }
 }
