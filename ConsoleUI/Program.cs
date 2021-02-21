@@ -12,11 +12,11 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             User user = new User { Email = "kivanc.frh@gmail.com", Password = "123" };
-            Car car = new Car { BrandId = 2, ModelId = 2, ColorId = 3, DailyPrice = 750, ModelYear = "2021", Description = "Kıvanç 2" };
+            Car car = new Car { BrandId = 3, ModelId = 2, ColorId = 2, DailyPrice = 550, ModelYear = "2016", Description = "Kıvanç 5" };
 
-            Login(user);
-            AddCar(car);
-            GetCarByBrandId(3);
+            //Login(user);
+            //AddCar(car);
+            //GetCarByBrandId(3);
             JoinTest();
         }
 
