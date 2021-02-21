@@ -12,8 +12,8 @@ namespace DataAccess.Concrete.EntityFramework
         {
             try
             {
-                optionsBuilder.UseSqlServer(@"Server=TU04LTBX1Y5Q2;Database=ReCap;Trusted_Connection=true");
-                //optionsBuilder.UseSqlServer(@"Server=DESKTOP-TEV2VHC\SQLEXPRESS;Database=ReCap;Trusted_Connection=true");
+                //optionsBuilder.UseSqlServer(@"Server=TU04LTBX1Y5Q2;Database=ReCap;Trusted_Connection=true");
+                optionsBuilder.UseSqlServer(@"Server=DESKTOP-TEV2VHC\SQLEXPRESS;Database=ReCap;Trusted_Connection=true");
             }
             catch (Exception)
             {
