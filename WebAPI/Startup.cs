@@ -32,8 +32,8 @@ namespace WebAPI
             //Autofac, Ninject, CastleWindsor, StructureMap (AOP imkanlarý sunan firmalar .core yokken)
             //AOP --> bir metodun önünde, sonunda, hata verdiðinde çalýþan kod parçacýklarýný yazarýz.
             services.AddControllers();
-            services.AddSingleton<ICarService, CarManager>(); //Bana arka planda bir referans oluþtur. ctor'da ICarService isteyene CarManager ver!
-            services.AddSingleton<ICarDal, EfCarDal>();
+            //services.AddSingleton<ICarService, CarManager>(); //Bana arka planda bir referans oluþtur. ctor'da ICarService isteyene CarManager ver!
+            //services.AddSingleton<ICarDal, EfCarDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

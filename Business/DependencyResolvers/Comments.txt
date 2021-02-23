@@ -1,0 +1,3 @@
+﻿Bağımlılık - bizim gevşek bağlı olarak oluşturduğumuz loosely coupled denilen bir yapı.
+örneğin car manager'ın car servise bağımlı olması olayını artık burda yapıyor olacağız. Yani tek seferde yazıp heryerde kullanacağız
+örneğin ICarService ve ICarDal ın karşığı nedir sorusunun cevabı burda olacak

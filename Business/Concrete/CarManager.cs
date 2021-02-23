@@ -1,11 +1,15 @@
 ﻿using Business.Abstract;
 using Business.Constans;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
+using Core.CrossCuttingConcerns.Validation;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,17 +26,17 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        [ValidationAspect(typeof(CarValidator))] //AddCar çalışmadan önce Car ı bulup ilgili valitador ı bulup validate yapacak.
         public IResult AddCar(Car car, Brand brand)
         {
-            if (brand.Name.Length >= 2 && car.DailyPrice > 0)
-            {
+            //Business codes - iş ihtiyaçlarımıza uygunluk.
+            //Validation codes Eklemeye çalıştığımız nesnenin iş kurallarına dail olması için yapısal kurallarına uygun olup olmadığı
+
+
                 _carDal.Add(car);
+
                 return new SuccessResult(Messages.CarAdded);
-            }
-            else
-            {
-                return new ErrorResult(Messages.CarInvalid);
-            }
+            
         }
 
         public IResult AddCar(Car car)
