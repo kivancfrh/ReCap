@@ -1,12 +1,14 @@
 ﻿using Business.Abstract;
 using Business.Constans;
+using Core.Entities.Concrete;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
+using Core.Utilities.Security.Hashing;
+using Core.Utilities.Security.JWT;
 using DataAccess.Abstract;
-using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -19,17 +21,20 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
-        public IResult CheckUser(User user)
+
+        public List<OperationClaim> GetClaims(User user)
         {
-            try
-            {
-                var result = _userDal.Get(p => p.Email == user.Email && p.Password == user.Password);
-                return new SuccessResult(Messages.SuccessLogin);
-            }
-            catch (Exception)
-            {
-                return new ErrorResult(Messages.LoginInvalid);
-            }
+            return _userDal.GetClaims(user);
+        }
+
+        public void Add(User user)
+        {
+            _userDal.Add(user);
+        }
+
+        public User GetByMail(string email)
+        {
+            return _userDal.Get(u => u.Email == email);
         }
     }
 }

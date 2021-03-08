@@ -40,11 +40,6 @@ namespace DataAccess.Concrete
             throw new NotImplementedException();
         }
 
-        public List<CarDetailDto> GetCarDetails(User user)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update(Car entity)
         {
             throw new NotImplementedException();

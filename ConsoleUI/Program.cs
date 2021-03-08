@@ -11,7 +11,7 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            User user = new User { Email = "kivanc.frh@gmail.com", Password = "123" };
+            //User user = new User { Email = "kivanc.frh@gmail.com", Password = "123" };
             Car car = new Car { BrandId = 3, ModelId = 2, ColorId = 2, DailyPrice = 550, ModelYear = "2016", Description = "Kıvanç 5" };
 
             //Login(user);
@@ -20,21 +20,21 @@ namespace ConsoleUI
             JoinTest();
         }
 
-        private static void Login(User user)
-        {
-            UserManager userManager = new UserManager(new EfUserDal());
-            var result = userManager.CheckUser(user);
+        //private static void Login(User user)
+        //{
+        //    UserManager userManager = new UserManager(new EfUserDal());
+        //    var result = userManager.CheckUser(user);
 
-            if (result.Success)
-            {
-                Console.WriteLine(result.Message);
-                UserOperations();
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
-        }
+        //    if (result.Success)
+        //    {
+        //        Console.WriteLine(result.Message);
+        //        UserOperations();
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(result.Message);
+        //    }
+        //}
 
         private static void UserOperations()
         {
